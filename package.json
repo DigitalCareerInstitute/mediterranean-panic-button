@@ -1,0 +1,23 @@
+{
+  "name": "mediterranean-panic-button",
+  "version": "1.0.0",
+  "description": "mediterranean-panic-button",
+  "main": "server/index.js",
+  "scripts": {
+    "server": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DigitalCareerInstitute/mediterranean-panic-button.git"
+  },
+  "author": "laith , tarek , orwa, amsumama, gabriela, stefen , fakher ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DigitalCareerInstitute/mediterranean-panic-button/issues"
+  },
+  "homepage": "https://github.com/DigitalCareerInstitute/mediterranean-panic-button#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
