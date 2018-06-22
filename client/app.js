@@ -1,6 +1,15 @@
 // Create a local PouchDB database
 const db = new PouchDB('my_database');
 console.log("Local database created");
+var remoteCouch = 'https://admin:a37ec1c0751f@couchdb-6ea1ed.smileupps.com/todos';
+
+function sync() {
+  //syncDom.setAttribute('data-sync-state', 'syncing');
+  var opts = {live: true};
+  db.replicate.to(remoteCouch, opts);
+  db.replicate.from(remoteCouch, opts);
+}
+
 
 function sosSend(data) {
   const sos = {
@@ -19,8 +28,12 @@ function sosSend(data) {
     if (!err) {
       console.log('Successfully SOS is sended!');
     }
-  });
+  })
+  sync();
+  ;
 }
+
+
 
 document.getElementById("submit").addEventListener("click", function(e){
   e.preventDefault();
@@ -33,7 +46,7 @@ document.getElementById("submit").addEventListener("click", function(e){
    image: document.getElementsByName("destLocation")[0].value,
    message: document.getElementsByName("destLocation")[0].value,
    name: document.getElementsByName("destLocation")[0].value,
-   status: document.getElementsByName("destLocation")[0].value
+   status: "open"
 }
   document.getElementById("demo").innerHTML = data.destLocation;
   sosSend(data);
