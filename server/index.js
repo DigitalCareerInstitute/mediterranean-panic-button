@@ -5,7 +5,7 @@ const cron = require('node-cron');
 
 
 app.get('/', (req, res, next) => {
-    res.json({api:"Welcome to our App"})
+    res.json({api:"Welcome to our App :)))"})
 })
 
 cron.schedule('1,2,4,5 * * * *', function(){
