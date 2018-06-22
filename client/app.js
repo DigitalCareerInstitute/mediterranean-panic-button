@@ -18,33 +18,12 @@ function sync() {
 
 }
 
-function sosSend(data) {
-  const sos = {
-    _id: new Date().toISOString(),
-    destination: data,
-    location: "",
-    current_time: "",
-    estimated_travel_time: "",
-    email: "",
-    image:"",
-    message: "",
-    name: "",
-    status:""
-  };
-  db.put(sos, function callback(err, result) {
-    if (!err) {
-      console.log('Successfully SOS is sended!');
-    }
-  })
-  sync();
-}
-
-
 
 document.getElementById("submit").addEventListener("click", function(e){
   console.log("hey");
   e.preventDefault();
   const data = {
+    _id: new Date().toISOString(),
     //destination: document.getElementsByName("destination")[0].value,
     location: JSON.parse(localStorage.getItem('loc')),
     current_time: Date(),
@@ -56,7 +35,14 @@ document.getElementById("submit").addEventListener("click", function(e){
     status: "open"
   }
   console.log(data);
-  sosSend(data);
+
+  db.put(data, function callback(err, result) {
+    if (!err) {
+      console.log('Successfully SOS is sended!');
+    }
+  })
+
+  sync();
 });
 
 

@@ -13,10 +13,8 @@
   </head>
   <body>
     <a class="skiplink" href="#map">Go to map</a>
-    <h2>Text Input</h2>
+    <h2>Mediterranean Panic Button</h2>
     <form method="get" >
-
-
       <fieldset>
 
         <legend>Personal</legend>
@@ -37,18 +35,18 @@
       <fieldset>
         <legend>Message</legend>
         <label>Message *</label>
-        <textarea id="message" name="subject"  style="height:200px" placeholder="Write something.."></textarea>
+        <textarea id="message" name="subject"  style="height:100px" placeholder="Write something.."></textarea>
       </fieldset>
 
       <input id="uploadedfile" type="file" name="uploadedfile" accept="image/*" capture style="margin: 20px;">  
+      <button class="btn" id="submit">Submit</button>
     </form>
-    <button class="btn" id="submit">Submit</button>
     <div id="demo"></div>
 
 
     <div id="map" class="map" tabindex="0"></div>
-    <button id="zoom-out">Zoom out</button>
-    <button id="zoom-in">Zoom in</button>
+    <!--<button id="zoom-out">Zoom out</button>-->
+    <!--<button id="zoom-in">Zoom in</button>-->
     <script>
       var map = L.map('map');
 
