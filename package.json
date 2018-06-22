@@ -21,7 +21,8 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "node-cron": "^1.2.1",
-    "nodemailer": "^4.6.7"
+    "nodemailer": "^4.6.7",
+    "pouchdb": "^7.0.0"
   },
   "devDependencies": {}
 }

@@ -1,0 +1,161 @@
+a.skiplink {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+a.skiplink:focus {
+  clip: auto;
+  height: auto;
+  width: auto;
+  background-color: #fff;
+  padding: 0.3em;
+}
+#map:focus {
+  outline: #4A74A8 solid 0.15em;
+}
+body{
+  background-color: lightgrey;
+  font: 14px/1.4 "Helvetica Neue",
+  Helvetica, Arial, sans-serif;
+}
+.main-content{
+  max-width: 90%;
+  margin: auto;
+}
+.content {
+  padding: 20px;
+  max-width:90%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+form {
+  border-radius: 5px;
+  overflow: hidden;
+  float: left;
+}
+input[type=text], select, textarea {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #cccccc4d;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin-left: 20%;
+  margin-bottom: 15px;   
+  display: block;
+}
+input[type=submit] {
+  background-color: red;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 20%;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+input[type=number]{
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #cccccc4d;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin-left: 20%;
+  margin-bottom: 15px;   
+  display: block;
+}
+
+fieldset{
+  border-radius: 10px;
+  border: 2px solid pink;
+  background-color: #cccccc4d;
+}
+label{
+  float: left;
+}
+legend{
+  padding: 10px;
+  border-top: 2px solid pink;
+  border-left: 2px solid pink;
+  border-right: 2px solid pink;
+  background-color: #cccccc4d;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.image {
+
+
+}
+.image form{ width: 60%;
+  margin-left: 50px;
+  background-color: #cccccc4d;
+}
+
+/* here the code for timer begins */
+
+.container{
+  width: 50%;
+  float: left;
+  margin-left: 10%;
+}
+
+h2{
+  color: #396;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+} 
+
+#clockdiv{
+  font-family: sans-serif;
+  color: white;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+
+}
+
+#clockdiv > div{
+  padding: 10px;
+  border-radius: 3px;
+  display: inline-block;
+  background-color: gray;
+}
+
+#clockdiv div > span{
+  padding: 15px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.smalltext{
+  padding-top: 5px;
+  font-size: 16px;
+}
+#start{
+  background-color: red;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin-top: 10px;
+}
+#start:hover{
+  background-color: #45a049;
+}
+#map {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

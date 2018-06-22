@@ -1,23 +1,30 @@
-// Create a local PouchDB database
 const db = new PouchDB('my_database');
 console.log("Local database created");
 var remoteCouch = 'https://admin:a37ec1c0751f@couchdb-6ea1ed.smileupps.com/todos';
 
 function sync() {
-  //syncDom.setAttribute('data-sync-state', 'syncing');
   var opts = {live: true};
   db.replicate.to(remoteCouch, opts);
   db.replicate.from(remoteCouch, opts);
-}
 
+  db.allDocs({
+    include_docs: true,
+    attachments: true,
+  }).then(function (result) {
+    console.log(result);
+  }).catch(function (err) {
+    console.log(err);
+  });
+
+}
 
 function sosSend(data) {
   const sos = {
     _id: new Date().toISOString(),
-    destLocation: data,
-    locatoin: "",
-    currTime: "",
-    estTravelTime: "",
+    destination: data,
+    location: "",
+    current_time: "",
+    estimated_travel_time: "",
     email: "",
     image:"",
     message: "",
@@ -30,25 +37,25 @@ function sosSend(data) {
     }
   })
   sync();
-  ;
 }
 
 
 
 document.getElementById("submit").addEventListener("click", function(e){
+  console.log("hey");
   e.preventDefault();
   const data = {
-   destLocation: document.getElementsByName("destLocation")[0].value,
-   locatoin: document.getElementsByName("destLocation")[0].value,
-   currTime: document.getElementsByName("destLocation")[0].value,
-   estTravelTime: document.getElementsByName("destLocation")[0].value,
-   email: document.getElementsByName("destLocation")[0].value,
-   image: document.getElementsByName("destLocation")[0].value,
-   message: document.getElementsByName("destLocation")[0].value,
-   name: document.getElementsByName("destLocation")[0].value,
-   status: "open"
-}
-  document.getElementById("demo").innerHTML = data.destLocation;
+    //destination: document.getElementsByName("destination")[0].value,
+    location: JSON.parse(localStorage.getItem('loc')),
+    current_time: Date(),
+    estimated_travel_time: document.getElementsByName("estimate")[0].value,
+    email: document.getElementsByName("email")[0].value,
+    //image: document.getElementsByName("")[0].value,
+    message: document.getElementsByName("subject")[0].value,
+    name: document.getElementsByName("name")[0].value,
+    status: "open"
+  }
+  console.log(data);
   sosSend(data);
 });
 
