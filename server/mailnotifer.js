@@ -14,7 +14,7 @@ module.exports = function sendMail(recipientAddress, subject, body) {
 
 let transporter = nodemailer.createTransport(smtpConfig);
 let mailOptions = {
-  From: '"Mediterrranean panic button" <devugees.shop@gmail.com>',
+  From: '"Mediterrranean panic button" <mediterraneanpanicbutton@gmail.com>',
   to: recipientAddress,
   subject: subject,
   text: body,
